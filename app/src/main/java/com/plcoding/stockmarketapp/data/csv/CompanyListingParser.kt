@@ -9,6 +9,9 @@ import java.io.InputStreamReader
 import javax.inject.Inject
 import javax.inject.Singleton
 
+
+// As there are no parameters for this class DaggerHilt can create and inject this
+// class without having to specify a provides function
 @Singleton
 class CompanyListingParser @Inject constructor(): CSVParser<CompanyListing> {
     override suspend fun parse(stream: InputStream): List<CompanyListing> {
